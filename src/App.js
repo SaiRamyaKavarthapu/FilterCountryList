@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+
+import React,{useState} from 'react';
 import './App.css';
+import Search from './Search';
+import CountryList from './CountryList';
+import response from './response';
+// import 'hk8-components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const title='Country Filter'
+function App(){
+const[data,setData]=useState('');
+console.log("response",response)
+
+
+    return(
+        <div className='Apps'> 
+       
+        <section className='w-30 justify-content-center layout-column mt-30 mx-auto'>
+
+            <Search  setData={setData} />
+            <CountryList  data={data} response={response} />
+
+        </section>
+           
+        </div>
+    )
+
 }
-
 export default App;
